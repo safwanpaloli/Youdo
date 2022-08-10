@@ -1,0 +1,32 @@
+<a href="/" type="button" class="btn btn-light mt-4 btn-lg ms-4" >Home</a>
+   <div class="dropdown float-end me-2 mt-4">
+    {{#if userdata}}
+    {{#each userdata}}
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    {{this.username}}
+  </button>
+  <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="/contactus">Contact us</a></li>
+    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+  </ul>
+  {{/each}}
+  {{/if}}
+</div>
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="container mt-5 pl-5">  
+        <h1>Settings</h1>
+{{#if userdata}}
+ {{#each userdata}}
+  <div class="mb-3">
+    <label for="Name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" value="{{this.Name}}" disabled>
+  </div>
+    <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="userid" aria-describedby="emailHelp" value="{{this.username}}" disabled>
+  </div>
+  {{/each}}
+    {{/if}}
+    </div>
+    </div>
